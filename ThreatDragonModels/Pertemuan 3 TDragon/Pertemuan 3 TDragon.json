@@ -25,7 +25,7 @@
               "y": 115
             },
             "size": {
-              "width": 330,
+              "width": 340,
               "height": 150
             },
             "attrs": {
@@ -35,8 +35,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "ffb800f4-1a3c-46c0-afa0-cdd49cf4d17a",
             "zIndex": -1,
+            "id": "ffb800f4-1a3c-46c0-afa0-cdd49cf4d17a",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary",
@@ -70,6 +70,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -153,7 +154,6 @@
               ]
             },
             "id": "e8040932-7541-4539-b567-4b865ddc373e",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Actor",
@@ -168,7 +168,7 @@
           },
           {
             "position": {
-              "x": 1020,
+              "x": 1030,
               "y": 160
             },
             "size": {
@@ -187,6 +187,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -270,7 +271,6 @@
               ]
             },
             "id": "ed8641c4-828e-4799-84c3-67ef9df1ada2",
-            "zIndex": 2,
             "data": {
               "type": "tm.Store",
               "name": "Store",
@@ -305,6 +305,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -388,7 +389,6 @@
               ]
             },
             "id": "6dfb19fa-6b3b-49f7-a08b-5be4a21ab8f1",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Process",
@@ -403,55 +403,6 @@
               "privilegeLevel": "",
               "threats": []
             }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "ffb800f4-1a3c-46c0-afa0-cdd49cf4d17a"
-              ]
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "5e82c368-ff85-43e9-87c1-74306facc7b7",
-            "source": {
-              "cell": "e8040932-7541-4539-b567-4b865ddc373e",
-              "port": "8a0182de-de17-49d0-b28e-47aac57a986a"
-            },
-            "target": {
-              "cell": "6dfb19fa-6b3b-49f7-a08b-5be4a21ab8f1",
-              "port": "0bfdd932-0448-48fe-8771-217db4fd3583"
-            },
-            "vertices": []
           },
           {
             "shape": "flow",
@@ -499,12 +450,81 @@
               "port": "176972be-31c4-4206-b313-41eaa3bef463"
             },
             "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "8ad79824-77b8-49ff-8841-7ef89c0ffe94",
+                  "title": "Password Stealing",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Information disclosure",
+                  "description": "Penyerang menyadap jaringan WiFi publik untuk mendapatkan data kredensial yang dikirim dalam bentuk plaintext",
+                  "mitigation": "Sistem harus menerapkan enkripsi TLS/HTTPS pada seluruh jalur komunikasi data antara Actor dan Process",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "ffb800f4-1a3c-46c0-afa0-cdd49cf4d17a"
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "5e82c368-ff85-43e9-87c1-74306facc7b7",
+            "source": {
+              "cell": "e8040932-7541-4539-b567-4b865ddc373e",
+              "port": "8a0182de-de17-49d0-b28e-47aac57a986a"
+            },
+            "target": {
+              "cell": "6dfb19fa-6b3b-49f7-a08b-5be4a21ab8f1",
+              "port": "0bfdd932-0448-48fe-8771-217db4fd3583"
+            },
+            "vertices": []
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 1
   }
 }
