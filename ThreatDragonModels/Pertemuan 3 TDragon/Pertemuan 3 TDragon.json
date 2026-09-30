@@ -21,6 +21,39 @@
         "cells": [
           {
             "position": {
+              "x": 820,
+              "y": 115
+            },
+            "size": {
+              "width": 330,
+              "height": 150
+            },
+            "attrs": {
+              "label": {
+                "text": "Trust Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "ffb800f4-1a3c-46c0-afa0-cdd49cf4d17a",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "5e82c368-ff85-43e9-87c1-74306facc7b7"
+              ],
+              "containedElements": [
+                "ed8641c4-828e-4799-84c3-67ef9df1ada2",
+                "6dfb19fa-6b3b-49f7-a08b-5be4a21ab8f1"
+              ]
+            }
+          },
+          {
+            "position": {
               "x": 610,
               "y": 160
             },
@@ -402,7 +435,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "ffb800f4-1a3c-46c0-afa0-cdd49cf4d17a"
+              ]
             },
             "labels": [
               "Data Flow"
@@ -454,7 +489,7 @@
             "labels": [
               "Data Flow"
             ],
-            "id": "2c4f30e6-2524-4dba-a835-27aa1d45c0eb",
+            "id": "ab9c6e51-5dc8-45f9-b987-4d54edf4028a",
             "source": {
               "cell": "6dfb19fa-6b3b-49f7-a08b-5be4a21ab8f1",
               "port": "4e115d43-aa60-49c7-9a08-2d056515cb1a"
