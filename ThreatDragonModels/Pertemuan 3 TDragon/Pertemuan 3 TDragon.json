@@ -495,6 +495,19 @@
                   "new": false,
                   "number": 1,
                   "score": ""
+                },
+                {
+                  "id": "edf36d75-1d4c-4a02-8f91-612b013dbe62",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 2,
+                  "score": ""
                 }
               ],
               "trustBoundaryIds": [
@@ -525,6 +538,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 2
   }
 }
